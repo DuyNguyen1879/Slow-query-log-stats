@@ -1,0 +1,13 @@
+{
+    "name": "iconlanguageservices/itrans-slow-query-stats",
+    "authors": [
+        {
+            "name": "Gareth Ellis",
+            "email": "gareth.ellis@iconplc.com"
+        }
+    ],
+    "require": {
+        "gumbercules/mysqlslow": "dev-master"
+    },
+    "minimum-stability": "dev"
+}

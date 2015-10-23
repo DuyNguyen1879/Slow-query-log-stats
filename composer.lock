@@ -1,0 +1,57 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "2353fbf81aeee3878e89fded5050f868",
+    "content-hash": "e4ccdd2d1cc119b098be880bcd643a8e",
+    "packages": [
+        {
+            "name": "gumbercules/mysqlslow",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/garethellis36/mysql-slow-query-log-parser.git",
+                "reference": "b69c9b9e8f8ccb216b0a945cd06c42f07aca1e3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/garethellis36/mysql-slow-query-log-parser/zipball/b69c9b9e8f8ccb216b0a945cd06c42f07aca1e3a",
+                "reference": "b69c9b9e8f8ccb216b0a945cd06c42f07aca1e3a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Gumbercules\\MysqlSlow\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gareth Ellis",
+                    "email": "garethellis@gmail.com"
+                }
+            ],
+            "description": "Parser class for MySQL slow query log",
+            "time": "2015-09-21 12:35:20"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "gumbercules/mysqlslow": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
