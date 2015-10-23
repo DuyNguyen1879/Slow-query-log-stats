@@ -22,9 +22,13 @@ $sortedByDate = [];
 $totalTime = 0;
 $numQueries = count($entries);
 
+if (isset($argv[2])) {
+    $user = $argv[2];
+}
+
 foreach ($entries as $entry) {
 
-    if ($entry->getUser() != "itrans_main") {
+    if (isset($user) && $entry->getUser() != $user) {
         continue;
     }
 
