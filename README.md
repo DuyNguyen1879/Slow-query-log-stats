@@ -7,7 +7,11 @@ This is a very basic PHP script for parsing a MySQL slow query log and returning
 * Number of queries per day
 * Average query time per day
 
+The script uses my [MySQL slow query log parser library](https://github.com/garethellis36/mysql-slow-query-log-parser).
+
 # Usage
+
+Install composer dependencies with `composer install`, then:
 
 `php parse.php <filename>`
 
