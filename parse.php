@@ -24,6 +24,10 @@ $numQueries = count($entries);
 
 foreach ($entries as $entry) {
 
+    if ($entry->getUser() != "itrans_main") {
+        continue;
+    }
+
 	$date = $entry->getDatetime()->format("D jS M Y");
 
 	if (!isset($sortedByDate[$date])) {
