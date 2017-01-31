@@ -20,6 +20,9 @@ if (isset($argv[2])) {
 $parser = new LogParser(file_get_contents($argv[1]));
 
 $entries = array_filter($parser->parseEntries(), function ($entry) use ($user) {
+	if ($entry->getDatetime()->format("l") == "Saturday" or $entry->getDatetime()->format("l") == "Sunday") {
+		return false;
+	}
 	if (!$user) {
 		return true;
 	}
@@ -34,7 +37,7 @@ $numQueries = count($entries);
 
 foreach ($entries as $entry) {
 
-	$date = $entry->getDatetime()->format("D jS M Y");
+	$date = $entry->getDatetime()->format("Y-m-d");
 
 	if (!isset($sortedByDate[$date])) {
 		$sortedByDate[$date]["numQueries"] = 0;
@@ -50,21 +53,7 @@ foreach ($entries as $entry) {
 
 echo "\n";
 
-echo number_format($numQueries) . " queries\n";
-
-if ($numQueries > 0) {
-    echo "Average query time: " . round($totalTime / $numQueries, 4) . "ms\n";
-}
-
-echo "\n";
-
 foreach ($sortedByDate as $date => $stats) {
-	$stats["numQueries"] = number_format($stats["numQueries"]);
-	echo "{$date}: {$stats["numQueries"]} slow queries\n";
-
-    if ($stats["numQueries"] > 0) {
-        echo "Average query time: " . round($stats["totalTime"] / $stats["numQueries"], 4) . "ms\n";
-    }
-
+	echo $date . "," . $stats["numQueries"] . "," . ($stats["numQueries"] > 0 ? round($stats["totalTime"] / $stats["numQueries"], 4) : "");
     echo "\n";
 }
